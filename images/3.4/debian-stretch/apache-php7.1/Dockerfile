@@ -9,11 +9,13 @@ RUN apt-get update && apt-get install -y \
         && docker-php-ext-install zip \
         && docker-php-ext-install mbstring
 
+# Build Phalcon
 RUN cd /usr/src \
         && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
         && cd cphalcon-${PHALCON_VERSION}/build \
         && ./install \
         && cd ../../ \
-        && rm -r cphalcon-${PHALCON_VERSION}
+        && rm -r cphalcon-${PHALCON_VERSION} \
+        && echo 'extension=phalcon.so' > "$PHP_INI_DIR/conf.d/ext-phalcon.ini"
 
-RUN echo 'extension=phalcon.so' > /usr/local/etc/php/conf.d/ext-phalcon.ini
+COPY --from=composer:1.5 /usr/bin/composer /usr/bin/composer
