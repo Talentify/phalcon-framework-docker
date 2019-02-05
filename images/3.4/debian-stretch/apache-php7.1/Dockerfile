@@ -1,5 +1,5 @@
 FROM php:7.1-apache-stretch
-LABEL version="0.1.0"
+LABEL version="0.2.0"
 
 ENV PHALCON_VERSION=3.4.2
 
@@ -18,4 +18,3 @@ RUN cd /usr/src \
         && rm -r cphalcon-${PHALCON_VERSION} \
         && echo 'extension=phalcon.so' > "$PHP_INI_DIR/conf.d/ext-phalcon.ini"
 
-COPY --from=composer:1.5 /usr/bin/composer /usr/bin/composer
