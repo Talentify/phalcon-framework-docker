@@ -1,4 +1,4 @@
-FROM php:7.1-apache-stretch
+FROM php:7.2-apache-stretch
 LABEL version="0.2.0"
 
 # https://gcc.gnu.org/onlinedocs/gcc/x86-Options.html
