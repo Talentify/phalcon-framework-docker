@@ -7,26 +7,26 @@ services:
   # Phalcon 3.3
   phalcon-3.3-7.1:
     build: images/3.3/debian-stretch/apache-php7.1
-    image: gnumoksha/phalcon-framework:3.3-php-7.1-apache-stretch
+    image: talentify/phalcon-framework:3.3-php-7.1-apache-stretch
 
   phalcon-3.3-7.2:
     build: images/3.3/debian-stretch/apache-php7.2
-    image: gnumoksha/phalcon-framework:3.3-php-7.2-apache-stretch
+    image: talentify/phalcon-framework:3.3-php-7.2-apache-stretch
 
   phalcon-3.3-7.3:
     build: images/3.3/debian-stretch/apache-php7.3
-    image: gnumoksha/phalcon-framework:3.3-php-7.3-apache-stretch
+    image: talentify/phalcon-framework:3.3-php-7.3-apache-stretch
 
 
   # Phalcon 3.4
   phalcon-3.4-7.1:
     build: images/3.4/debian-stretch/apache-php7.1
-    image: gnumoksha/phalcon-framework:3.4-php-7.1-apache-stretch
+    image: talentify/phalcon-framework:3.4-php-7.1-apache-stretch
 
   phalcon-3.4-7.2:
     build: images/3.4/debian-stretch/apache-php7.2
-    image: gnumoksha/phalcon-framework:3.4-php-7.2-apache-stretch
+    image: talentify/phalcon-framework:3.4-php-7.2-apache-stretch
 
   phalcon-3.4-7.3:
     build: images/3.4/debian-stretch/apache-php7.3
-    image: gnumoksha/phalcon-framework:3.4-php-7.3-apache-stretch
+    image: talentify/phalcon-framework:3.4-php-7.3-apache-stretch
