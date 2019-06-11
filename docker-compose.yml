@@ -25,7 +25,10 @@ services:
 
   phalcon-3.4-7.2:
     build: images/3.4/debian-stretch/apache-php7.2
-    image: talentify/phalcon-framework:3.4-php-7.2-apache-stretch
+    image: talentify/phalcon-framework:3.4-php-7.2-apache-stretch-x64
+    environment:
+      - GCC_ARCH=core-avx-i
+      - GCC_TUNE=core-avx-i
 
   phalcon-3.4-7.3:
     build: images/3.4/debian-stretch/apache-php7.3
