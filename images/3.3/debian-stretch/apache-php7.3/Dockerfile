@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
 RUN cd /usr/src \
         && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
         && cd cphalcon-${PHALCON_VERSION}/build \
-#        && sed -i -e 's/-march=native -mtune=native/-march=core-avx-i -mtune=core-avx-i/g' install \
+        && sed -i -e 's/-march=native/-march=${GCC_ARCH}/g' install \
+        && sed -i -e 's/-mtune=native/-mtune=${GCC_TUNE}/g' install \
         && ./install \
         && cd ../../ \
         && rm -r cphalcon-${PHALCON_VERSION} \
