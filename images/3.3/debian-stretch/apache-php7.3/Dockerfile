@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y \
 
 # Build Phalcon
 RUN cd /usr/src \
-        && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
+        && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/${PHALCON_VERSION}" | tar -xz \
         && cd cphalcon-${PHALCON_VERSION}/build \
         && sed -i -e 's/-march=native/-march=${GCC_ARCH}/g' install \
         && sed -i -e 's/-mtune=native/-mtune=${GCC_TUNE}/g' install \
