@@ -26,6 +26,14 @@ services:
 #      - GCC_ARCH=core-avx-i
 #      - GCC_TUNE=core-avx-i
 
+  # Phalcon 3.3 - Debian Buster
+  phalcon-3.3-7.2-buster:
+    build: images/3.3/debian-buster/apache-php7.2
+    image: talentify/phalcon-framework:3.3-php-7.2-apache-buster
+    environment:
+      - GCC_ARCH=core-avx-i
+      - GCC_TUNE=core-avx-i
+
 #  # Phalcon 3.4
 #  phalcon-3.4-7.1:
 #    build: images/3.4/debian-stretch/apache-php7.1
