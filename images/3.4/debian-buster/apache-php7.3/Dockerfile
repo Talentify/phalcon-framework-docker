@@ -1,7 +1,7 @@
-FROM php:7.2-apache-stretch
-LABEL version="0.2.0"
+FROM php:7.3-apache-buster
+LABEL version="0.1.0"
 
-ENV PHALCON_VERSION=3.3.2
+ENV PHALCON_VERSION=3.4.5
 
 # Install base PHP extensions.
 RUN apt-get update && apt-get install -y \
@@ -11,10 +11,9 @@ RUN apt-get update && apt-get install -y \
 
 # Build Phalcon
 RUN cd /usr/src \
-        && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/${PHALCON_VERSION}" | tar -xz \
+        && curl -sSL "https://codeload.github.com/phalcon/cphalcon/tar.gz/v${PHALCON_VERSION}" | tar -xz \
         && cd cphalcon-${PHALCON_VERSION}/build \
-        && sed -i -e 's/-march=native/-march=${GCC_ARCH}/g' install \
-        && sed -i -e 's/-mtune=native/-mtune=${GCC_TUNE}/g' install \
+        && sed -i -e 's/-march=native -mtune=native/-march=core-avx-i -mtune=core-avx-i/g' install \
         && ./install \
         && cd ../../ \
         && rm -r cphalcon-${PHALCON_VERSION} \

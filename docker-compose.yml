@@ -4,28 +4,6 @@ version: '3.5'
 # run: docker-compose build
 
 services:
-  # Phalcon 3.3
-  phalcon-3.3-7.1:
-    build: images/3.3/debian-stretch/apache-php7.1
-    image: talentify/phalcon-framework:3.3-php-7.1-apache-stretch-x64
-    environment:
-      - GCC_ARCH=core-avx-i
-      - GCC_TUNE=core-avx-i
-
-  phalcon-3.3-7.2:
-    build: images/3.3/debian-stretch/apache-php7.2
-    image: talentify/phalcon-framework:3.3-php-7.2-apache-stretch-x64
-    environment:
-      - GCC_ARCH=core-avx-i
-      - GCC_TUNE=core-avx-i
-
-#  phalcon-3.3-7.3:
-#    build: images/3.3/debian-stretch/apache-php7.3
-#    image: talentify/phalcon-framework:3.3-php-7.3-apache-stretch-x64
-#    environment:
-#      - GCC_ARCH=core-avx-i
-#      - GCC_TUNE=core-avx-i
-
   # Phalcon 3.3 - Debian Buster
   phalcon-3.3-7.2-buster:
     build: images/3.3/debian-buster/apache-php7.2
@@ -34,24 +12,10 @@ services:
       - GCC_ARCH=core-avx-i
       - GCC_TUNE=core-avx-i
 
-#  # Phalcon 3.4
-#  phalcon-3.4-7.1:
-#    build: images/3.4/debian-stretch/apache-php7.1
-#    image: talentify/phalcon-framework:3.4-php-7.1-apache-stretch
-#    environment:
-#      - GCC_ARCH=core-avx-i
-#      - GCC_TUNE=core-avx-i
-#
-#  phalcon-3.4-7.2:
-#    build: images/3.4/debian-stretch/apache-php7.2
-#    image: talentify/phalcon-framework:3.4-php-7.2-apache-stretch-x64
-#    environment:
-#      - GCC_ARCH=core-avx-i
-#      - GCC_TUNE=core-avx-i
-#
-#  phalcon-3.4-7.3:
-#    build: images/3.4/debian-stretch/apache-php7.3
-#    image: talentify/phalcon-framework:3.4-php-7.3-apache-stretch
-#    environment:
-#      - GCC_ARCH=core-avx-i
-#      - GCC_TUNE=core-avx-i
+  # Phalcon 3.4
+  phalcon-3.4-7.3:
+    build: images/3.4/debian-buster/apache-php7.3
+    image: talentify/phalcon-framework:3.4-php-7.3-apache-buster
+    environment:
+      - GCC_ARCH=core-avx-i
+      - GCC_TUNE=core-avx-i
