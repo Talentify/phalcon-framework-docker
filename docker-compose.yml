@@ -4,18 +4,28 @@ version: '3.5'
 # run: docker-compose build
 
 services:
-  # Phalcon 3.3 - Debian Buster
-  phalcon-3.3-7.2-buster:
-    build: images/3.3/debian-buster/apache-php7.2
-    image: talentify/phalcon-framework:3.3-php-7.2-apache-buster
+  phalcon-4.1-8.x:
+    build: images/4.1/debian-buster/apache-php8
+    image: talentify/phalcon-framework:4.1-php-8-apache-buster
+
+  phalcon-4.1-7.4:
+    build: images/4.1/debian-buster/apache-php7.4
+    image: talentify/phalcon-framework:4.1-php-7.4-apache-buster
+
+  phalcon-4.0-8.0:
+    build: images/4.0/debian-buster/apache-php8
+    image: talentify/phalcon-framework:4-php-8-apache-buster
+
+  phalcon-3.4-7.3:
+    build: images/3.4/debian-buster/apache-php7.3
+    image: talentify/phalcon-framework:3.4-php-7.3-apache-buster
     environment:
       - GCC_ARCH=core-avx-i
       - GCC_TUNE=core-avx-i
 
-  # Phalcon 3.4
-  phalcon-3.4-7.3:
-    build: images/3.4/debian-buster/apache-php7.3
-    image: talentify/phalcon-framework:3.4-php-7.3-apache-buster
+  phalcon-3.3-7.2-buster:
+    build: images/3.3/debian-buster/apache-php7.2
+    image: talentify/phalcon-framework:3.3-php-7.2-apache-buster
     environment:
       - GCC_ARCH=core-avx-i
       - GCC_TUNE=core-avx-i
