@@ -6,8 +6,7 @@ ENV PHALCON_VERSION=3.4.5
 # Install base PHP extensions.
 RUN apt-get update && apt-get install -y \
         libzip-dev \
-        && docker-php-ext-install zip \
-        && docker-php-ext-install mbstring
+        && docker-php-ext-install zip
 
 # Build Phalcon
 RUN cd /usr/src \
