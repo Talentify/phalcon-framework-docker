@@ -1,13 +1,12 @@
-FROM php:7.2-apache-buster
-LABEL version="0.2.0"
+FROM php:7.4-apache-buster
+LABEL version="0.1.0"
 
-ENV PHALCON_VERSION=3.3.2
+ENV PHALCON_VERSION=3.4.5
 
 # Install base PHP extensions.
 RUN apt-get update && apt-get install -y \
         libzip-dev \
-        && docker-php-ext-install zip \
-        && docker-php-ext-install mbstring
+        && docker-php-ext-install zip
 
 # Build Phalcon
 RUN cd /usr/src \
@@ -19,4 +18,4 @@ RUN cd /usr/src \
         && rm -r cphalcon-${PHALCON_VERSION} \
         && echo 'extension=phalcon.so' > "$PHP_INI_DIR/conf.d/ext-phalcon.ini"
 
-COPY --from=composer:1.5 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
