@@ -19,4 +19,4 @@ RUN cd /usr/src \
         && rm -r cphalcon-${PHALCON_VERSION} \
         && echo 'extension=phalcon.so' > "$PHP_INI_DIR/conf.d/ext-phalcon.ini"
 
-COPY --from=composer:22sr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
