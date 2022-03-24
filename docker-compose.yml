@@ -17,3 +17,7 @@ services:
     environment:
       - GCC_ARCH=core-avx-i
       - GCC_TUNE=core-avx-i
+
+  phalcon-4.1-7.4:
+    build: images/4.1/debian-bullseye/apache-php7.4
+    image: talentify/phalcon-framework:4.1-php-7.4-apache-bullseye
